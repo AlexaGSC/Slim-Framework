@@ -9,5 +9,11 @@ $aContainer['view'] = function ($cContainer) {
     $cContainer -> request -> getUri()
   ));
   return $vViews;
-};
+
+  };
+
+
+  $aContainer['Phrase_Controller'] = function ($cContainer) {
+      return new \Controller\Phrase_Controller($cContainer);
+  };
 
