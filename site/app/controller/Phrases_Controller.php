@@ -12,16 +12,20 @@ class Phrases_Controller {
     public function randomPhrase(Request $request, Response $response){
         $filedir  = "../database/frases.txt";
 
-# Obtiene el contenido de texto del fichero y lo desglosa en un array
-$getFile = file($filedir);
+        # Obtiene el contenido de texto del fichero y lo desglosa en un array
+        $getFile = file($filedir);
 
-# Genera un número aleatorio, midiendo la totalidad de frases que hay
-$getMAX = count($getFile);
-$random = mt_rand(0, $getMAX);
-return $getFile[$random];
+        # Genera un número aleatorio, midiendo la totalidad de frases que hay
+        $getMAX = count($getFile);
+        $random = mt_rand(0, $getMAX);
+        return $getFile[$random];
 
     }
+
+
     public function allPhrases(Request $request, Response $response){
+
+
         $filedir  = "../database/frases.txt";
 
         # Obtiene el contenido de texto del fichero y lo desglosa en un array
