@@ -13,4 +13,5 @@ $aApp->get ('/todo', Phrases_Controller::Class . ':allPhrases');*/
 
 $aApp -> get('/middleware', Phrase_Controller::Class . ':randomPhrase') -> add (new \Middleware\Phrase_Middleware()); 
 
+$aApp -> get('/pokemon', Pokemon_Controller::Class . ':randomPokemon'); //Pokemon_Controller es el alias que declaramos en el provider.
 ?>

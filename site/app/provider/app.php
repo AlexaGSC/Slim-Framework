@@ -17,3 +17,6 @@ $aContainer['view'] = function ($cContainer) {
       return new \Controller\Phrase_Controller($cContainer);
   };
 
+$aContainer['Pokemon_Controller'] = function ($cContainer) { //Aqui Pokemon_Controller es un Alias que le ponemos al controlador.
+  return new \Controller\Pokemon_Controller($cContainer);
+};
