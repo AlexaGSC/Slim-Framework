@@ -7,7 +7,7 @@ return [
       'twig' => [ 'cache' => false ]
     ],
     'db' => [
-      'driver' => 'mysql',
+      'driver' => 'json',
       'mysql' => [
         'driver' => 'mysql',
         'host' => '192.168.1.111:3344',
@@ -20,7 +20,7 @@ return [
       ],
       'json' => [
         'driver' => 'json',
-        'filename' => 'pokemons.json',
+        'filename' => 'pokemon.json',
         'path' => __DIR__ . '/../database'
       ],
       'txt' => [

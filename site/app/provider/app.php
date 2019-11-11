@@ -28,6 +28,8 @@ $aContainer['db'] = function ($cContainer) {
   $mManager = new \Illuminate\Database\Capsule\Manager;
   $aConfig = $cContainer -> get('config')['db'];
   
+  if ($aConfig['driver'] != 'mysql') return $aConfig[$aConfig['driver']];
+
   $mManager -> addConnection($aConfig[$aConfig['driver']]);
   $mManager -> setAsGlobal();
   $mManager -> bootEloquent();
