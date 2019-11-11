@@ -20,3 +20,16 @@ $aContainer['view'] = function ($cContainer) {
 $aContainer['Pokemon_Controller'] = function ($cContainer) { //Aqui Pokemon_Controller es un Alias que le ponemos al controlador.
   return new \Controller\Pokemon_Controller($cContainer);
 };
+
+// Conexión con la base de datos.
+
+$aContainer['db'] = function ($cContainer) {
+
+  $mManager = new \Illuminate\Database\Capsule\Manager;
+  $aConfig = $cContainer -> get('config')['db'];
+  
+  $mManager -> addConnection($aConfig[$aConfig['driver']]);
+  $mManager -> setAsGlobal();
+  $mManager -> bootEloquent();
+  return $mManager;
+};
